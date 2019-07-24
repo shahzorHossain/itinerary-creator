@@ -1,0 +1,51 @@
+// export default class Main extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>
+//           <Link to="/">Itinerary Planner</Link>
+//         </h1>
+//         {React.cloneElement(this.props.children, this.props)}
+//       </div>
+//     );
+//   }
+// }
+
+// React.cloneElement(this.props.children, this.props) this will pass down all the props from the main to the children
+
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PhotoGrid from './PhotoGrid';
+import Single from './Single';
+import { Router, Route } from 'react-router-dom';
+import { history } from '../store';
+
+export default class Main extends Component {
+  render() {
+    return (
+      <div>
+        <Router history={history}>
+          <Route
+            path="/"
+            render={routeProps => (
+              <h1>
+                <Link to="/">Reduxstagram </Link>
+              </h1>
+            )}
+          />
+
+          <Route
+            exact
+            path="/"
+            render={routeProps => <PhotoGrid {...routeProps} {...this.props} />}
+          />
+
+          <Route
+            path="/view/:postId"
+            render={routeProps => <Single {...routeProps} {...this.props} />}
+          />
+        </Router>
+      </div>
+    );
+  }
+}

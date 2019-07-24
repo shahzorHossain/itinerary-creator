@@ -1,0 +1,19 @@
+import React, { Component } from 'react';
+import Photo from './Photo';
+import axios from 'axios';
+import Amadeus from 'amadeus';
+
+export default class PhotoGrid extends Component {
+  componentDidMount() {}
+  render() {
+    return (
+      <div className="photo-grid">
+        {this.props.posts.map((post, i) => (
+          <Photo {...this.props} key={i} i={i} post={post} />
+        ))}
+      </div>
+    );
+  }
+}
+
+// {...this.props} passes down all the props so that the component can use them
