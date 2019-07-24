@@ -1,18 +1,3 @@
-// export default class Main extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1>
-//           <Link to="/">Itinerary Planner</Link>
-//         </h1>
-//         {React.cloneElement(this.props.children, this.props)}
-//       </div>
-//     );
-//   }
-// }
-
-// React.cloneElement(this.props.children, this.props) this will pass down all the props from the main to the children
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PhotoGrid from './PhotoGrid';
@@ -29,7 +14,7 @@ export default class Main extends Component {
             path="/"
             render={routeProps => (
               <h1>
-                <Link to="/">Reduxstagram </Link>
+                <Link to="/">Itinerary Creator</Link>
               </h1>
             )}
           />

@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 // import css
-import css from './styles/style.styl';
+import css from './styles/style.css';
 
 // import Components
 import App from './components/App';
@@ -47,18 +47,7 @@ import store from './store';
 // });
 
 // console.log(window.user.uselessFunction);
-// const router = (
-//   <Provider store={store}>
-//     <Router history={history}>
-//       <App>
-//         <Switch>
-//           <Route exact path="/" component={PhotoGrid} />
-//           <Route path="/view/:postId" component={Single} />
-//         </Switch>
-//       </App>
-//     </Router>
-//   </Provider>
-// );
+
 const router = (
   <Provider store={store}>
     <App />
