@@ -10,13 +10,15 @@ const API_SECRET = key.API_SECRET;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
+
 var amadeus = new Amadeus({
   clientId: API_KEY,
   clientSecret: API_SECRET
 });
 
-var dataList = [];
+var barcelonaData = [];
 
+// Barcelona data list gathering
 amadeus.referenceData.locations.pointsOfInterest
   .get({
     latitude: 41.387573,
@@ -24,15 +26,14 @@ amadeus.referenceData.locations.pointsOfInterest
     radius: 8
   })
   .then(response => {
-    console.log(response);
-    dataList = response.result.data;
+    barcelonaData = response.result.data;
   })
   .catch(error => {
     console.log(error);
   });
-app.get('/api/greeting', (req, res) => {
-  const name = req.query.name || 'World';
-  res.send(dataList);
+
+app.get('/api/barcelona', (req, res) => {
+  res.send(barcelonaData);
 });
 
 app.listen(3001, () =>

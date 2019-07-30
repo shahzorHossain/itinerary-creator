@@ -3,8 +3,6 @@ import Photo from './Photo';
 import Comment from './Comment';
 import Axios from 'axios';
 
-var listOfPlaces = [];
-
 export default class Single extends Component {
   constructor(props) {
     super(props);
@@ -12,13 +10,21 @@ export default class Single extends Component {
   }
 
   componentDidMount() {
-    Axios.get(`/api/greeting`)
+    Axios.get(`/api/barcelona`)
       .then(res => {
         console.log(res);
-        this.setState({ isLoaded: true });
       })
       .catch(error => console.log(error));
+
+    setTimeout(
+      function() {
+        //Start the timer
+        this.setState({ isLoaded: true }); //After 1 second, set render to true
+      }.bind(this),
+      1000
+    );
   }
+
   render() {
     const { isLoaded } = this.state;
     const { postId } = this.props.match.params;
@@ -29,8 +35,8 @@ export default class Single extends Component {
 
     //get us the comments
     const postComments = this.props.comments[postId] || [];
-    if (this.state.isLoaded === false) {
-      return <div>loading data...</div>;
+    if (isLoaded === false) {
+      return <div class="loader" />;
     } else {
       return (
         <div className="single-photo">
