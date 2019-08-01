@@ -3,7 +3,7 @@ import sagradaFamilia from './photos/sagrada-familia.jpg';
 const posts = [
   {
     code: 'BAcyDyQwcXX',
-    caption: 'Lunch #hamont',
+    caption: 'La Sagrada Familia',
     likes: 56,
     id: '1161022966406956503',
     display_src: sagradaFamilia

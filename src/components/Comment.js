@@ -11,7 +11,7 @@ export default class Comment extends Component {
       <div className="comment" key={i}>
         <p>
           <strong>{comment.user}</strong>
-          {comment.text}
+          {this.props.listOfPlaces[i]}
           <button
             className="remove-comment"
             onClick={() => {

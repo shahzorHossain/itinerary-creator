@@ -3,6 +3,8 @@ import Photo from './Photo';
 import Comment from './Comment';
 import Axios from 'axios';
 
+var listOfPlaces = [];
+
 export default class Single extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +14,7 @@ export default class Single extends Component {
   componentDidMount() {
     Axios.get(`/api/barcelona`)
       .then(res => {
-        console.log(res);
+        res.data.map(x => listOfPlaces.push(x.name));
       })
       .catch(error => console.log(error));
 
@@ -36,12 +38,16 @@ export default class Single extends Component {
     //get us the comments
     const postComments = this.props.comments[postId] || [];
     if (isLoaded === false) {
-      return <div class="loader" />;
+      return <div className="loader" />;
     } else {
       return (
         <div className="single-photo">
           <Photo post={post} i={i} {...this.props} />
-          <Comment postComments={postComments} {...this.props} />
+          <Comment
+            postComments={postComments}
+            listOfPlaces={listOfPlaces}
+            {...this.props}
+          />
         </div>
       );
     }
