@@ -14,7 +14,7 @@ export default class Main extends Component {
             path="/"
             render={routeProps => (
               <h1>
-                <Link to="/">Itinerary Creator</Link>
+                <Link to="/">Places to Instagram</Link>
               </h1>
             )}
           />

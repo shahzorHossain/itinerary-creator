@@ -152,6 +152,10 @@ button:focus,
   top: 30%;
   left: 0;
 }
+img {
+  width: auto;
+  height: 100%;
+}
 
 .loader {
   position: absolute;

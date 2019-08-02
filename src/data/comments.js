@@ -5,24 +5,7 @@ const comments = {
       user: 'heavymetaladam'
     }
   ],
-  BAcyDyQwcXX: [
-    {
-      text: 'Wes. WE should have lunch.',
-      user: 'jdaveknox'
-    },
-    {
-      text: '#adults',
-      user: 'jdaveknox'
-    },
-    {
-      text: '@jdaveknox yes!',
-      user: 'wesbos'
-    },
-    {
-      text: '😍 love Hamilton!',
-      user: 'willowtreemegs'
-    }
-  ],
+  BAcyDyQwcXX: [],
   BAPIPRjQce9: [
     {
       text: "Those are cute! They're like silver dollar pancakes.",

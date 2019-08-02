@@ -3,10 +3,11 @@ import sagradaFamilia from './photos/sagrada-familia.jpg';
 const posts = [
   {
     code: 'BAcyDyQwcXX',
-    caption: 'La Sagrada Familia',
+    caption: 'La Sagrada Familia - Barcelona',
     likes: 56,
     id: '1161022966406956503',
-    display_src: sagradaFamilia
+    display_src: sagradaFamilia,
+    city: 'Barcelona'
   },
   {
     code: 'BAcJeJrQca9',

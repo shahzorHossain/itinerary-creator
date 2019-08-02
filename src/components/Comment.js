@@ -6,12 +6,24 @@ export default class Comment extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderComment = this.renderComment.bind(this);
   }
+
+  componentDidMount() {
+    const { postId } = this.props.match.params;
+    const { listOfRandomUsers, listOfPlaces } = this.props;
+    console.log(this.props.postComments);
+    if (this.props.postComments.length === 0) {
+      var i;
+      for (i = 0; i < 10; i++) {
+        this.props.addComment(postId, listOfRandomUsers[i], listOfPlaces[i]);
+      }
+    }
+  }
   renderComment(comment, i) {
     return (
       <div className="comment" key={i}>
         <p>
           <strong>{comment.user}</strong>
-          {this.props.listOfPlaces[i]}
+          {comment.text}
           <button
             className="remove-comment"
             onClick={() => {

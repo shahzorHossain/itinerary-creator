@@ -28,7 +28,9 @@ class Photo extends Component {
         </div>
 
         <figcaption>
-          <p>{post.caption}</p>
+          <p>
+            <b>{post.caption}</b>
+          </p>
           <div className="control-buttons">
             <button
               onClick={() => {
